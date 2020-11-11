@@ -1,19 +1,19 @@
-# tor
-[tor](https://www.torproject.org/) proxy through an [Alpine Linux](https://www.alpinelinux.org/) Docker container
+# tor-proxy
+[Tor](https://www.torproject.org/) proxy through an [Alpine Linux](https://www.alpinelinux.org/) Docker container
 
-### installation
+### Installation
 ```
-docker pull skovati/tor:latest
+docker pull skovati/tor-proxy:latest
 ```
 
-### usage
+### Usage
 ```
 docker run \
   -d \
   --restart=unless-stopped \
-  --name tor \
+  --name tor-proxy \
   -p 127.0.0.1:9050:9050 \
-  skovati/tor:latest
+  skovati/tor-proxy:latest
 ```
 #### DNS
 If you would like to route DNS requests through tor as well add 
@@ -22,8 +22,8 @@ If you would like to route DNS requests through tor as well add
 ```
 and change OS/browser settings accordingly
 
-### testing
-to check for tor circuit run 
+### Testing
+To check for tor circuit run either of the following
 ```
 curl -sx socks5h://127.0.0.1:9050 https://check.torproject.org | grep -m 1 Congratulations
 torsocks wget -qO- https://ifconfig.io
