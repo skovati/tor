@@ -26,5 +26,5 @@ and change OS/browser settings accordingly
 To check for tor circuit run either of the following
 ```
 curl -sx socks5h://127.0.0.1:9050 https://check.torproject.org | grep -m 1 Congratulations
-torsocks wget -qO- https://ifconfig.io
+torsocks wget -qO- https://ipconfig.io
 ```

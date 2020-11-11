@@ -14,7 +14,7 @@ RUN chown -R tor /etc/tor
 
 USER tor
 
-EXPOSE 53/udp 9050
+EXPOSE 9050
 
 ENTRYPOINT ["tor"]
 
