@@ -4,9 +4,8 @@ LABEL name="tor"
 LABEL version="latest"
 
 RUN apk update && \
-  apk add tor && \
-  chmod 700 /var/lib/tor && \
-  rm -rf /var/cache/apk/*
+  apk add --no-cache tor && \
+  chmod 700 /var/lib/tor
 
 COPY torrc /etc/tor/torrc
 
